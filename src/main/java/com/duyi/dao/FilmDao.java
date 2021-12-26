@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface FilmDao {
     List<Film> getList();
+
+    Film findFilmById(String filmId);
 }

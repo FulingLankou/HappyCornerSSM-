@@ -11,13 +11,30 @@
 <head>
     <title>Title</title>
 </head>
+
+<style type="text/css">
+    body {
+        background: #2E323B;
+    }
+
+    .piao {
+        text-align: center;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 238px;
+        padding: 6px;
+        line-height: 20px;
+        background: #5f5f6d;
+    }
+</style>
+
 <body>
     <table bgcolor="0" align="center">
         <tr>
             <c:forEach items="${filmVoList}" var="film" begin="0" end="3">
                 <td>
                     <div style="width: 250px; margin:10px;">
-                        <a href="">
+                        <a href="filmInfo?filmId=${film.filmId}">
                             <img src="${pageContext.request.contextPath}${film.imgPath}"
                                  style="width: 250px;height: 380px"/>
                         </a>
@@ -35,7 +52,7 @@
             <c:forEach items="${filmVoList}" var="film" begin="4" end="7">
                 <td>
                     <div style="width: 250px; margin:10px;">
-                        <a href="">
+                        <a href="filmInfo?filmId=${film.filmId}">
                             <img src="${pageContext.request.contextPath}${film.imgPath}"
                                  style="width: 250px;height: 380px"/>
                         </a>
@@ -48,6 +65,5 @@
             </c:forEach>
         </tr>
     </table>
-
 </body>
 </html>

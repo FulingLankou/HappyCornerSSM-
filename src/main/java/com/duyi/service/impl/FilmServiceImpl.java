@@ -3,6 +3,7 @@ package com.duyi.service.impl;
 import com.duyi.dao.FilmDao;
 import com.duyi.entity.Film;
 import com.duyi.service.FilmService;
+import com.duyi.vo.FilmDetailVo;
 import com.duyi.vo.FilmVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +20,6 @@ public class FilmServiceImpl implements FilmService {
     @Override
     public List<FilmVo> getList() {
         List<Film> films = filmDao.getList();
-        System.out.println("数据库中影片数量：" + films.size());
-
         List<FilmVo> result = new ArrayList<>();
         for (Film film : films) {
             FilmVo vo = new FilmVo();
@@ -33,4 +32,13 @@ public class FilmServiceImpl implements FilmService {
         }
         return result;
     }
+
+    @Override
+    public FilmDetailVo findFilmById(String filmId) {
+        Film film = filmDao.findFilmById(filmId);
+        FilmDetailVo filmDetailVo = new FilmDetailVo(film);
+        System.out.println(filmDetailVo.getName());
+        return filmDetailVo;
+    }
+
 }
