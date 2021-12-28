@@ -37,6 +37,7 @@ public class FilmController {
     public String filmInfo(@RequestParam String filmId, Model model){
         FilmDetailVo detailVo = filmService.findFilmById(filmId);
         model.addAttribute("detailVo",detailVo);
+        
         return "detail";
     }
 
