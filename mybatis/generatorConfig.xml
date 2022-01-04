@@ -11,11 +11,11 @@
                         connectionURL="jdbc:mysql://localhost:8080/ssm?characterEncoding=utf-8"
                         userId="root" password="root"/>
         <!--⽣成entity/domain对象-->
-        <javaModelGenerator targetPackage="com.duyi.entity" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.duing.domain" targetProject="src/main/java"/>
         <!--⽣成mapper⽂件-->
         <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources"/>
         <!--⽣成mapper接⼝/dao接⼝-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.duyi.dao"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.duing.dao"
                              targetProject="src/main/java"/>
         <!--对应表名-->
         <table tableName="room"/>
